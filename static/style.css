@@ -1,87 +1,459 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>자주 묻는 질문(FAQ)</title>
-  <link rel="stylesheet" href="/static/style.css" />
-</head>
-<body>
-  <div class="layout-page">
-    <header class="site-header">
-      <div class="site-header-inner">
-        <div class="site-title">교직원용 비공식 업무보조 페이지</div>
-        <nav class="site-nav">
-          <a href="/">홈</a>
-          <a href="/docs-portal.html">업무 가이드</a>
-          <a href="/faq.html" class="is-active">자주 묻는 질문</a>
-        </nav>
-      </div>
-    </header>
+/* ============================
+   공통 스타일 (교직원용 사이트)
+   ============================ */
 
-    <main class="main-content">
-      <section class="page-wrap">
-        <h1 class="page-title">자주 묻는 질문</h1>
-        <p class="page-subtitle">
-          교무실에서 자주 나오는 질문을 모아 두는 페이지 예시입니다.
-        </p>
+/* 박스 모델 통일 */
+* {
+  box-sizing: border-box;
+}
 
-        <div class="badge-soft" style="margin-bottom: 12px;">
-          ※ 실제로는 학교 상황에 맞게 질문·답변을 자유롭게 교체하면 됩니다.
-        </div>
+/* 컬러 변수 느낌으로 통일해서 사용 */
+:root {
+  --bg-body: #f5f5f7;
+  --bg-card: #ffffff;
+  --bg-soft: #fbeaf2;      /* 아주 연한 분홍+회색 느낌 */
+  --primary: #f7d6e6;      /* 포인트 분홍 */
+  --primary-soft: #fbeaf2;
+  --border: #e4dfe8;
+  --text-main: #111111;
+  --text-muted: #777777;
+  --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
 
-        <div class="faq-list">
-          <div class="faq-item is-open">
-            <button class="faq-question" data-faq-toggle>
-              <span>연가 신청서는 언제까지 제출해야 하나요?</span>
-              <span class="faq-icon">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                원칙적으로는 가능한 한 사전에 제출해 주시는 것이 좋습니다.
-                다만 긴급한 상황에서는 사후 승인 절차를 안내드리고 있습니다.
-              </p>
-            </div>
-          </div>
+/* 기본 타이포 & 반응형 글자 크기 */
+html {
+  font-size: 16px;
+}
 
-          <div class="faq-item">
-            <button class="faq-question" data-faq-toggle>
-              <span>출장 후 영수증은 어디에 제출하면 되나요?</span>
-              <span class="faq-icon">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                관내 출장은 행정실, 관외 여비는 여비 담당자에게
-                정산서와 함께 제출해 주시면 됩니다.
-              </p>
-            </div>
-          </div>
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+}
 
-          <div class="faq-item">
-            <button class="faq-question" data-faq-toggle>
-              <span>나이스 복무 현황이 실제와 다른 경우 어떻게 하나요?</span>
-              <span class="faq-icon">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                행정실로 문의해 주시면 복무 기록을 함께 확인하고 필요한 경우
-                수정·정정 절차를 진행해 드립니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-body);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Apple SD Gothic Neo", "Noto Sans KR", "맑은 고딕", sans-serif;
+  line-height: 1.6;
+  word-break: keep-all;
+}
 
-    <footer class="site-footer">
-      <div class="site-footer-inner">
-        제작자: 씩씩하고 귀여운 고주무관 ·
-        Contact: edusproutcmomics@naver.com ·
-        학교 공식 홈페이지가 아닌, 개인적인 토이 프로젝트입니다.
-      </div>
-    </footer>
-  </div>
+/* 링크 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  <script src="/static/site.js"></script>
-</body>
-</html>
+a:hover {
+  text-decoration: underline;
+}
+
+/* 레이아웃 기본 골격 */
+.layout-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #e5e5ea;
+}
+
+.site-header-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  background: transparent;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+}
+
+.site-nav a.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* 메인 컨텐츠 영역 */
+.main-content {
+  flex: 1;
+}
+
+.page-wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
+}
+
+/* 섹션 제목 공통 */
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.page-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* 푸터 */
+.site-footer {
+  border-top: 1px solid #e5e5ea;
+  background: #ffffff;
+}
+
+.site-footer-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 10px 16px 16px;
+  font-size: 0.8rem;
+  color: #666666;
+  text-align: center;
+}
+
+/* ============================
+   1) 홈 - 카드형 레이아웃
+   ============================ */
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home-card-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: var(--primary-soft);
+  color: #333333;
+}
+
+.home-card-title {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.home-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.home-card-footer {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ============================
+   2) 문서 포털 레이아웃
+   ============================ */
+
+.docs-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .docs-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.docs-sidebar {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 14px 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  position: sticky;
+  top: 60px;
+  height: fit-content;
+}
+
+.docs-sidebar-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.docs-nav-group {
+  margin-bottom: 10px;
+}
+
+.docs-nav-group-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 8px 4px 4px;
+  color: #555555;
+}
+
+.docs-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.docs-nav-list li a {
+  display: block;
+  padding: 6px 8px;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.docs-nav-list li a:hover {
+  background: var(--primary-soft);
+}
+
+.docs-nav-list li a.is-current {
+  background: var(--primary);
+}
+
+/* 포털 본문 컨테이너 */
+.docs-content {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 20px 22px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ============================
+   3) A4 문서뷰 스타일
+   ============================ */
+
+.doc-a4-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.doc-a4 {
+  max-width: 760px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 28px 26px 32px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border);
+}
+
+.doc-a4-header {
+  margin-bottom: 18px;
+}
+
+.doc-a4-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.doc-a4-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* 문서 안의 기본 타이포 */
+.doc-a4 h2 {
+  font-size: 1.1rem;
+  margin: 18px 0 6px;
+}
+
+.doc-a4 h3 {
+  font-size: 1rem;
+  margin: 14px 0 4px;
+}
+
+.doc-a4 p {
+  margin: 6px 0;
+  font-size: 0.92rem;
+}
+
+.doc-a4 ul {
+  padding-left: 20px;
+  margin: 6px 0;
+  font-size: 0.92rem;
+}
+
+/* 이미지가 들어갈 때 여백 */
+.doc-a4-figure {
+  margin: 12px 0;
+  text-align: center;
+}
+
+.doc-a4-figure img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+/* ============================
+   4) 탭 UI 스타일
+   ============================ */
+
+.tabs-root {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 18px 18px 22px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 1px solid #e3e3ea;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.tab-button {
+  border: none;
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background: var(--primary-soft);
+}
+
+.tab-button.is-active {
+  background: var(--primary);
+}
+
+.tab-panel {
+  display: none;
+  font-size: 0.92rem;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+/* ============================
+   5) FAQ 아코디언 스타일
+   ============================ */
+
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.faq-question {
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question span {
+  flex: 1;
+}
+
+.faq-icon {
+  font-size: 1.1rem;
+  margin-left: 8px;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 16px 12px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.faq-item.is-open .faq-answer {
+  display: block;
+}
+
+/* 기타 작은 유틸 */
+.badge-soft {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: var(--primary-soft);
+}
