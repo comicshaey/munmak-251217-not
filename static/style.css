@@ -78,8 +78,8 @@ a:hover {
 }
 
 .site-title {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.5em; 
+  font-weight: 700; 
 }
 
 .site-nav {
@@ -457,3 +457,4 @@ a:hover {
   font-size: 0.75rem;
   background: var(--primary-soft);
 }
+
