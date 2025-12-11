@@ -4,84 +4,105 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>교직원용 비공식 업무보조 페이지</title>
-
-  <link rel="icon" href="/static/favicon.ico" />
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header-inner">
-      <div class="site-title-wrap">
-        <a href="/" class="site-title-link">
-          <span class="site-logo-badge">EDU</span>
-          <span class="site-title-text">교직원용 비공식 업무보조 페이지</span>
-        </a>
+  <div class="layout-page">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <div class="site-title">교직원용 비공식 업무보조 페이지</div>
+        <nav class="site-nav">
+          <a href="/" class="is-active">홈</a>
+          <a href="/docs-portal.html">업무 가이드</a>
+          <a href="/faq.html">자주 묻는 질문</a>
+        </nav>
       </div>
+    </header>
 
-      <nav class="site-nav" aria-label="주요 메뉴">
-        <a href="/" class="nav-link nav-link-active">홈</a>
-        <a href="/checklist/" class="nav-link">체크리스트</a>
-        <a href="/frequently-asked-questions/" class="nav-link">FAQ</a>
-        <a href="/tools/" class="nav-link">업무 도구 모음</a>
-        <a href="/engineer-notes-update/" class="nav-link">업무 능력 향상 노트</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="page-wrap">
-    <section class="hero">
-      <h1 class="hero-title">교직원용 비공식 업무보조 페이지</h1>
-      <p class="hero-subtitle">
-        행정실 실무 관점에서 정리한 각종 업무 도구와 체크리스트를 모아 둔
-        개인 토이 프로젝트입니다. 공식 지침과 다를 경우,
-        반드시 최신 공문과 편람을 우선으로 참고해 주세요.
-      </p>
-    </section>
-
-    <section class="section-card-grid" aria-label="주요 기능 바로가기">
-      <article class="section-card">
-        <h2 class="section-title">업무 오류·누락 방지 체크리스트</h2>
-        <p class="section-desc">
-          자주 헷갈리는 행정절차를 단계별로 정리한 체크리스트입니다.
+    <main class="main-content">
+      <section class="page-wrap">
+        <h1 class="page-title">어디서부터 볼까요?</h1>
+        <p class="page-subtitle">
+          행정실과 교무실이 같이 쓰는, 텍스트·이미지 위주의 업무 안내 모음입니다.
         </p>
-        <a href="/checklist/" class="btn-primary">체크리스트 바로가기</a>
-      </article>
 
-      <article class="section-card">
-        <h2 class="section-title">자주 나오는 질문 정리 (FAQ)</h2>
-        <p class="section-desc">
-          교직원·행정실 사이에서 반복해서 오가는 질문과 답변을 모아 정리했습니다.
-        </p>
-        <a href="/frequently-asked-questions/" class="btn-outline">FAQ 보러가기</a>
-      </article>
+        <div class="home-grid">
+          <a class="home-card" href="/docs-portal.html#section-bokmu">
+            <div class="home-card-tag">복무 · 근무시간</div>
+            <div class="home-card-title">출결·연가·출장 처리</div>
+            <div class="home-card-desc">
+              근무신청부터 증빙 제출, 복무처리까지 한 흐름으로 정리한 안내입니다.
+            </div>
+            <div class="home-card-footer">
+              연가·병가·공무외출·출장 등
+            </div>
+          </a>
 
-      <article class="section-card">
-        <h2 class="section-title">업무 효율화 도구 모음</h2>
-        <p class="section-desc">
-          연차·여비·인건비 등 계산 도구와 검증기를 모아 둔 공간입니다.
-        </p>
-        <a href="/tools/" class="btn-outline">도구 모음 보러가기</a>
-      </article>
+          <a class="home-card" href="/docs-portal.html#section-gyeoyak">
+            <div class="home-card-tag">계약 · 인사</div>
+            <div class="home-card-title">기간제·공무직 계약 흐름</div>
+            <div class="home-card-desc">
+              채용공고, 서류 준비, 계약체결, 임용대장까지 단계별로 정리했습니다.
+            </div>
+            <div class="home-card-footer">
+              교사/공무직/시간제 등
+            </div>
+          </a>
 
-      <article class="section-card">
-        <h2 class="section-title">업무 능력 향상 노트</h2>
-        <p class="section-desc">
-          업무 공부 기록, 실수 로그, 개선 아이디어를 정리한 개인 학습 노트입니다.
-        </p>
-        <a href="/engineer-notes-update/" class="btn-outline">노트 보러가기</a>
-      </article>
-    </section>
+          <a class="home-card" href="/docs-portal.html#section-yeobi">
+            <div class="home-card-tag">여비</div>
+            <div class="home-card-title">관내·관외 여비 처리 예시</div>
+            <div class="home-card-desc">
+              실제 서식과 예시를 기반으로, 자주 헷갈리는 부분 위주로 정리했습니다.
+            </div>
+            <div class="home-card-footer">
+              공문·정산서 작성 흐름
+            </div>
+          </a>
 
-    <section class="author-note" aria-label="작성자 메모">
-      <h2 class="section-title">작성자 메모</h2>
-      <div data-author-note></div>
-    </section>
-  </main>
+          <a class="home-card" href="/doc-a4.html">
+            <div class="home-card-tag">PDF 느낌</div>
+            <div class="home-card-title">A4 문서뷰 예시</div>
+            <div class="home-card-desc">
+              교무회의 자료, 업무 매뉴얼을 웹에서 읽기 좋게 보여줄 때 쓰는 형식입니다.
+            </div>
+            <div class="home-card-footer">
+              인쇄·배포용 문서에 적합
+            </div>
+          </a>
 
-  <footer class="site-footer">
-    <p class="footer-text" data-global-footer></p>
-  </footer>
+          <a class="home-card" href="/tabs-example.html">
+            <div class="home-card-tag">탭 UI</div>
+            <div class="home-card-title">과정별 안내 모음</div>
+            <div class="home-card-desc">
+              한 업무를 개요 · 절차 · 예시 · Q&A로 나누어 보여줄 때 사용하는 템플릿입니다.
+            </div>
+            <div class="home-card-footer">
+              복잡한 업무 요약에 좋음
+            </div>
+          </a>
 
-  <script src="/static/site-common.js"></script>
+          <a class="home-card" href="/faq.html">
+            <div class="home-card-tag">FAQ</div>
+            <div class="home-card-title">자주 묻는 질문 모음</div>
+            <div class="home-card-desc">
+              “교무실에서 자주 묻는 질문” 위주로 정리할 때 쓰는 아코디언 형식입니다.
+            </div>
+            <div class="home-card-footer">
+              펼쳐보기/접기 방식
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        제작자: 씩씩하고 귀여운 고주무관 ·
+        Contact: edusproutcmomics@naver.com ·
+        학교 공식 홈페이지가 아닌, 개인적인 토이 프로젝트입니다.
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

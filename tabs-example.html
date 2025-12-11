@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>탭 기반 안내 예시</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="layout-page">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <div class="site-title">교직원용 비공식 업무보조 페이지</div>
+        <nav class="site-nav">
+          <a href="/">홈</a>
+          <a href="/docs-portal.html">업무 가이드</a>
+          <a href="/faq.html">자주 묻는 질문</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="page-wrap">
+        <h1 class="page-title">탭 기반 업무 안내 예시</h1>
+        <p class="page-subtitle">
+          한 업무를 개요 · 절차 · 예시 · Q&A로 나눠서 보여줄 때 사용할 수 있는 탭 템플릿입니다.
+        </p>
+
+        <div class="tabs-root" data-tabs-root>
+          <div class="tabs-list">
+            <button class="tab-button is-active" data-tab-target="overview">
+              개요
+            </button>
+            <button class="tab-button" data-tab-target="steps">
+              절차
+            </button>
+            <button class="tab-button" data-tab-target="example">
+              예시 화면
+            </button>
+            <button class="tab-button" data-tab-target="qa">
+              Q&A
+            </button>
+          </div>
+
+          <div class="tab-panel is-active" data-tab-panel="overview">
+            <p>
+              여기에는 업무의 전체 그림과 목적, 대상, 기본 개념을 짧게 설명합니다.
+              교직원이 “이게 대략 무슨 업무인지” 빠르게 파악할 수 있도록 작성합니다.
+            </p>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="steps">
+            <ol>
+              <li>1단계: 담당자 확인 및 업무 분장 파악</li>
+              <li>2단계: 필요한 서식 다운로드 및 안내</li>
+              <li>3단계: 신청 접수·검토</li>
+              <li>4단계: 시스템 입력 및 결재</li>
+              <li>5단계: 결과 안내 및 문서 정리</li>
+            </ol>
+            <p style="font-size: 0.85rem; color: #777;">
+              실제 절차는 학교 상황에 따라 세부 조정이 필요합니다.
+            </p>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="example">
+            <p>
+              여기에는 스크린샷이나 그림을 넣어서 “실제 화면에서 무엇을 눌러야 하는지”
+              보여줄 수 있습니다.
+            </p>
+            <p>
+              예: 나이스 메뉴 위치, 서식 작성 예시 이미지 등.
+            </p>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="qa">
+            <p>
+              자주 묻는 질문을 간단히 정리합니다.
+            </p>
+            <ul>
+              <li>Q. 제출기한이 지나면 어떻게 되나요?</li>
+              <li>Q. 서류 양식이 바뀌었을 때는 어디서 확인하나요?</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        제작자: 씩씩하고 귀여운 고주무관 ·
+        Contact: edusproutcmomics@naver.com ·
+        학교 공식 홈페이지가 아닌, 개인적인 토이 프로젝트입니다.
+      </div>
+    </footer>
+  </div>
+
+  <script src="/static/site.js"></script>
+</body>
+</html>
