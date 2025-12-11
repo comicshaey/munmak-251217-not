@@ -77,9 +77,9 @@ a:hover {
   justify-content: space-between;
 }
 
-.site-title {
-  font-size: 1.5em; 
-  font-weight: 700; 
+header .site-title {
+  font-size: 1.5em;
+  line-height: 1.2;
 }
 
 .site-nav {
@@ -456,5 +456,11 @@ a:hover {
   border-radius: 999px;
   font-size: 0.75rem;
   background: var(--primary-soft);
+}
+
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 1.25em;
+  }
 }
 
