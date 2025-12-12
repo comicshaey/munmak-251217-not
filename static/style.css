@@ -475,4 +475,41 @@ a:hover {
   background: var(--primary-soft);
 }
 
+/* 페이지 상단 이동 버튼 */
+#scrollTopBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  border: none;
+  background: #f2d7e5; /* 연한 파스텔 분홍 */
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* 보일 때 */
+#scrollTopBtn.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* 살짝 떠 있는 느낌 */
+#scrollTopBtn:hover {
+  transform: translateY(-3px);
+}
+
 
