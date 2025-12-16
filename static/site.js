@@ -7,6 +7,24 @@
 
 document.addEventListener("click", function (e) {
 
+    /* =========================
+     홈 카드 필터
+     ========================= */
+  const filterBtn = e.target.closest("[data-filter]");
+  if (filterBtn) {
+    const value = filterBtn.getAttribute("data-filter");
+
+    document.querySelectorAll("[data-filter]").forEach((b) => b.classList.remove("is-active"));
+    filterBtn.classList.add("is-active");
+
+    document.querySelectorAll(".home-card[data-category]").forEach((card) => {
+      const cat = card.getAttribute("data-category");
+      const show = (value === "all") || (cat === value);
+      card.style.display = show ? "" : "none";
+    });
+  }
+
+  
   /* =========================
      탭 전환 처리
      ========================= */
@@ -68,3 +86,4 @@ document.addEventListener("scroll", function () {
     btn.classList.remove("is-visible");
   }
 });
+
