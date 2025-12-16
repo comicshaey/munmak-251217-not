@@ -1,12 +1,21 @@
-// 탭 전환 처리
+// ===============================
+// UI 공통 동작 스크립트
+// - 탭 전환
+// - FAQ 아코디언
+// - 상단 이동 버튼
+// ===============================
+
 document.addEventListener("click", function (e) {
+
+  /* =========================
+     탭 전환 처리
+     ========================= */
   const tabBtn = e.target.closest("[data-tab-target]");
   if (tabBtn) {
     const targetId = tabBtn.getAttribute("data-tab-target");
     const root = tabBtn.closest("[data-tabs-root]");
     if (!root) return;
 
-    // 같은 묶음 안의 버튼/패널을 전부 정리
     const buttons = root.querySelectorAll("[data-tab-target]");
     const panels = root.querySelectorAll("[data-tab-panel]");
 
@@ -14,6 +23,7 @@ document.addEventListener("click", function (e) {
     panels.forEach((panel) => panel.classList.remove("is-active"));
 
     tabBtn.classList.add("is-active");
+
     const targetPanel = root.querySelector(
       `[data-tab-panel="${targetId}"]`
     );
@@ -22,18 +32,39 @@ document.addEventListener("click", function (e) {
     }
   }
 
-  // FAQ 아코디언
+  /* =========================
+     FAQ 아코디언
+     ========================= */
   const faqBtn = e.target.closest("[data-faq-toggle]");
   if (faqBtn) {
     const item = faqBtn.closest(".faq-item");
     if (!item) return;
 
-    // 하나만 열리게 하고 싶으면 아래 주석 해제
-    // const list = item.parentElement;
-    // list.querySelectorAll(".faq-item").forEach((el) => {
-    //   if (el !== item) el.classList.remove("is-open");
-    // });
-
     item.classList.toggle("is-open");
+  }
+
+  /* =========================
+     상단 이동 버튼 클릭
+     ========================= */
+  const scrollBtn = e.target.closest("#scrollTopBtn");
+  if (scrollBtn) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+});
+
+/* =========================
+   스크롤 위치 감지
+   ========================= */
+document.addEventListener("scroll", function () {
+  const btn = document.getElementById("scrollTopBtn");
+  if (!btn) return;
+
+  if (window.scrollY > 200) {
+    btn.classList.add("is-visible");
+  } else {
+    btn.classList.remove("is-visible");
   }
 });
