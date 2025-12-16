@@ -8,9 +8,14 @@
 </head>
 <body>
   <div class="layout-page">
+    <!-- =========================
+         헤더
+         ========================= -->
     <header class="site-header">
       <div class="site-header-inner">
-        <div class="site-title">고주무관의 교직원을 위한 행정업무 안내 사이트</div>
+        <div class="site-title">
+          고주무관의 교직원을 위한 행정업무 안내 사이트
+        </div>
         <nav class="site-nav">
           <a href="/" class="is-active">홈</a>
           <a href="/docs-portal.html">업무 가이드</a>
@@ -19,90 +24,114 @@
       </div>
     </header>
 
+    <!-- =========================
+         메인
+         ========================= -->
     <main class="main-content">
       <section class="page-wrap">
         <h1 class="page-title">궁금하신 내용을 선택해주세요.</h1>
         <p class="page-subtitle">
-          ·귀염둥이 고주무관이 교직원분들을 위해 만들어둔 행정업무 백과사전입니다.
+          귀여운 고주무관이 교직원분들을 위해 만들어둔 행정업무 백과사전입니다.
         </p>
 
+        <!-- 카드 필터 -->
+        <div class="home-filter">
+          <button type="button" class="filter-btn is-active" data-filter="all">전체</button>
+          <button type="button" class="filter-btn" data-filter="leave">복무</button>
+          <button type="button" class="filter-btn" data-filter="contract">계약</button>
+          <button type="button" class="filter-btn" data-filter="travel">여비</button>
+          <button type="button" class="filter-btn" data-filter="faq">FAQ</button>
+        </div>
+
+        <!-- 홈 카드 -->
         <div class="home-grid">
-          <a class="home-card" href="/docs-portal.html#section-bokmu">
-            <div class="home-card-tag">복무·근무상황 관련</div>
+
+          <a class="home-card" href="/docs-portal.html#section-bokmu" data-category="leave">
+            <div class="home-card-tag">복무·근무상황</div>
             <div class="home-card-title">교육공무직 등 복무 관련 안내</div>
             <div class="home-card-desc">
-              재량휴업일 복무 신청 유형 등부터 초과근무 증빙 관련 안내까지 복무와 관련된 행정업무에 대해 정리한 항목입니다.
+              재량휴업일 복무 신청 유형, 초과근무 증빙 등
+              복무와 관련된 행정업무를 정리했습니다.
             </div>
-            <div class="home-card-footer">
-              각종 복무 신청 유형 등
-            </div>
+            <div class="home-card-footer">복무 신청 · 초과근무</div>
           </a>
 
-          <a class="home-card" href="/docs-portal.html#section-gyeoyak">
-            <div class="home-card-tag">계약·인사 관련</div>
-            <div class="home-card-title">늘봄학교 강사, 대체인력 등 계약 관련 안내</div>
+          <a class="home-card" href="/docs-portal.html#section-gyeoyak" data-category="contract">
+            <div class="home-card-tag">계약·인사</div>
+            <div class="home-card-title">늘봄학교 강사·대체인력 계약 안내</div>
             <div class="home-card-desc">
-              채용 시 구비 서류, 채용 요구 시 계약서(안) 내용 체크리스트 등 계약 체결과 관련된 행정업무에 대해 정리한 항목입니다.
+              채용 시 구비서류, 계약서(안) 확인사항 등
+              계약 체결과 관련된 행정업무를 정리했습니다.
             </div>
             <div class="home-card-footer">
-              계약제교원, 교육공무직 대체인력, 늘봄학교 외부강사 등
+              계약제교원 · 교육공무직 · 외부강사
             </div>
           </a>
 
-          <a class="home-card" href="/docs-portal.html#section-yeobi">
-            <div class="home-card-tag">여비 관련</div>
-            <div class="home-card-title">관내 및 관외 여비</div>
+          <a class="home-card" href="/docs-portal.html#section-yeobi" data-category="travel">
+            <div class="home-card-tag">여비</div>
+            <div class="home-card-title">관내·관외 여비 안내</div>
             <div class="home-card-desc">
-              출장 및 여비 신청과 관련된 행정업무에 대해 정리한 항목입니다.
+              출장 신청부터 여비 정산서 작성까지
+              여비 관련 행정업무를 정리했습니다.
             </div>
             <div class="home-card-footer">
-              출장 종류 선택, 여비 정산서 작성 요령 등
+              출장 구분 · 여비 정산
             </div>
           </a>
 
-          <a class="home-card" href="/question-and-answer/doc-a4-001.html">
-            <div class="home-card-tag">(단일 업무)</div>
-            <div class="home-card-title">단일 업무에 대해 자세히 다루는 페이지</div>
+          <a class="home-card" href="/question-and-answer/doc-a4-001.html" data-category="qa">
+            <div class="home-card-tag">단일 업무</div>
+            <div class="home-card-title">늘봄학교 외부강사 계약 업무</div>
             <div class="home-card-desc">
-              자세히 설명드릴 필요가 있는 업무 한가지에 대해 처리과정 전반적으로 안내하는 항목입니다.
+              늘봄학교 외부강사 채용 및 위수탁 계약과 관련된
+              행정실 협의 사항을 정리한 문서입니다.
             </div>
             <div class="home-card-footer">
-              (설명이 길어지는 경우)
+              위수탁 계약 · 계약서 체크
             </div>
           </a>
 
-          <a class="home-card" href="/question-and-answer/tabs-example-001.html">
-            <div class="home-card-tag">(단일업무 자세히)</div>
-            <div class="home-card-title">절차가 복잡한 업무에 대해 조금 더 자세히 다루는 페이지</div>
+          <a class="home-card" href="/question-and-answer/tabs-example-001.html" data-category="qa">
+            <div class="home-card-tag">단일업무 상세</div>
+            <div class="home-card-title">늘봄학교 수익자부담금 업무</div>
             <div class="home-card-desc">
-              한 업무를 개요·절차·예시·Q&A로 나누어 상세하게 다룹니다.
+              수익자부담금 징수, 강사료 지급,
+              정산 절차를 탭 구조로 정리했습니다.
             </div>
             <div class="home-card-footer">
-              늘봄학교 교육 프로그램 외부강사 채용 절차 관련 등
+              징수 · 지급 · 정산
             </div>
           </a>
 
-          <a class="home-card" href="/faq.html">
+          <a class="home-card" href="/faq.html" data-category="faq">
             <div class="home-card-tag">FAQ</div>
             <div class="home-card-title">자주 묻는 질문</div>
             <div class="home-card-desc">
-              자주 묻는 질문, 반복되는 질문 등에 대해 간단하게 정리해놓은 항목입니다.
+              반복적으로 문의되는 질문을
+              빠르게 확인할 수 있도록 정리했습니다.
             </div>
             <div class="home-card-footer">
-              질문 별로 펼치기/접기 방식으로 설정해둠
+              질문/답변 모음
             </div>
           </a>
+
         </div>
       </section>
     </main>
 
+    <!-- =========================
+         푸터
+         ========================= -->
     <footer class="site-footer">
       <div class="site-footer-inner" data-global-footer></div>
     </footer>
   </div>
 
+  <!-- 상단 이동 버튼 -->
   <button id="scrollTopBtn" aria-label="위로 가기">↑</button>
 
+  <!-- 스크립트 -->
   <script src="/static/site-common.js"></script>
   <script src="/static/site.js"></script>
 </body>
